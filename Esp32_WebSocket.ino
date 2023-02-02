@@ -55,7 +55,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
       Serial.printf("[%u] Mensagem do navegador: %s\n", num, payload);
 
       // Envie a mensagem de volta para o cliente
-      webSocket.sendTXT(num, "Recebido no ESP!");
+      webSocket.sendTXT(num, "Millis no ESP = " + String(millis()));
       break;
     case WStype_BIN:
       Serial.printf("[%u] Binário recebido: %u bytes\n", num, length);
